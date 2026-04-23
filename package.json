@@ -9,7 +9,6 @@
     "test": "node --test --watch"
   },
   "dependencies": {
-    "ejs": "^5.0.2",
     "express": "^5.2.1"
   },
   "devDependencies": {
