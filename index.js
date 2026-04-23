@@ -1,3 +1,4 @@
+import path from 'node:path';
 import express from 'express';
 
 const app = express();
@@ -5,7 +6,11 @@ const PORT = 3000;
 
 // View engine setup
 
+const dirname = import.meta.dirname;
+const assetsPath = path.join(dirname, 'public');
+
 app.set('view engine', 'pug');
+app.use(express.static(assetsPath));
 
 // Routes
 
