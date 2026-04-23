@@ -1,3 +1,8 @@
 mixin external-link(href)
   a(href=href target="_blank" rel="noopener noreferrer")&attributes(attributes)
     block
+
+mixin icon(id, title)
+  svg.icon(width="24" height="24" fill="currentColor")
+    title=title
+    use(href=`/icons.svg#${id}-icon`)
