@@ -7,3 +7,6 @@ const dirname = import.meta.dirname;
 
 const assetsPath = path.join(dirname, 'public');
 const viewsPath = path.join(dirname, 'views');
+
+app.use(express.static(assetsPath));
+app.locals.basedir = viewsPath;
