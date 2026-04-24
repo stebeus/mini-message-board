@@ -2,8 +2,12 @@ import path from 'node:path';
 import express from 'express';
 import { toCamelCase } from './utils/formatters.js';
 
+// Server setup
+
 const app = express();
 const PORT = 3000;
+
+app.use(express.urlencoded({ extended: true }));
 
 // View engine setup
 
