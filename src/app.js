@@ -12,6 +12,24 @@ app.locals.basedir = VIEWS_PATH;
 app.set('views', VIEWS_PATH);
 app.set('view engine', 'pug');
 
+// Model
+
+function createMessage(username, content) {
+  const formattedDateOptions = {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  };
+
+  const state = {
+    username: String(username),
+    content: String(content),
+    date: new Date().toLocaleDateString('en-US', formattedDateOptions),
+  };
+
+  return { ...state };
+}
+
 // Routes
 
 app.get('/', (_request, response) => {
