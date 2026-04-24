@@ -14,4 +14,14 @@ block content
 
       button(type='submit') Post
 
+    section
+      h2 Messages
+
+      ul.messages
+      - for (const { username, content, date } of messages)
+        li.message
+          h3= username
+          time(datetime=date) Posted on #{ date }
+          p= content
+
   include layouts/footer
