@@ -1,0 +1,9 @@
+# Ignore everything
+*.*
+
+# Except files unsupported by Biome
+!*.md
+!*.pug
+!*.svg
+!*.xml
+!*.yaml
