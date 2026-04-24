@@ -13,3 +13,7 @@ app.locals.basedir = viewsPath;
 
 app.set('views', viewsPath);
 app.set('view engine', 'pug');
+
+app.get('/', (_request, response) => {
+  response.render('index');
+});
