@@ -12,10 +12,33 @@ const assetsPath = path.join(dirname, 'public');
 app.set('view engine', 'pug');
 app.use(express.static(assetsPath));
 
+// Data
+
+const formattedDate = [
+  'en-US',
+  { day: 'numeric', month: 'long', year: 'numeric' },
+];
+
+const messages = [
+  {
+    user: 'john_doe',
+    date: new Date().toLocaleDateString(...formattedDate),
+    text: "I'm going to hack the user below me.",
+  },
+  {
+    user: '01101100',
+    date: new Date().toLocaleDateString(...formattedDate),
+    text: '00110011000111',
+  },
+];
+
 // Routes
 
 app.get('/', (request, response) => {
-  response.render('index', { title: 'Mini Message Board' });
+  response.render('index', {
+    title: 'Mini Message Board',
+    messages: messages,
+  });
 });
 
 app.get('/{*splat}', (request, response) => {
