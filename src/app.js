@@ -10,3 +10,6 @@ const viewsPath = path.join(dirname, 'views');
 
 app.use(express.static(assetsPath));
 app.locals.basedir = viewsPath;
+
+app.set('views', viewsPath);
+app.set('view engine', 'pug');
