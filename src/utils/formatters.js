@@ -6,3 +6,14 @@ export function formatToCamelCase(string) {
 
   return lowerCased.split(' ').reduce(capitalizeRemainder).replace(/\W/g, '');
 }
+
+export function formatToKebabCase(string) {
+  const lowerCased = string.toLowerCase();
+
+  const spacesAndUnderscores = /[\s_]+/g;
+  const nonAlphanumeric = /[^0-9a-zA-Z-]/g;
+
+  return lowerCased
+    .replace(spacesAndUnderscores, '-')
+    .replace(nonAlphanumeric, '');
+}
