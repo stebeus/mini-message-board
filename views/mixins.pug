@@ -8,7 +8,7 @@ mixin icon(id, title)
     use(href=`/icons.svg#${id}-icon`)
 
 mixin input-field(label, options)
-  - const name = label.trim().replace(' ', '-').replace(':', '').toLowerCase()
+  - const name = moduleImports.toCamelCase(label)
 
   label.input-field&attributes(attributes) #{label}!{' '}
     if options.type === 'textarea'

@@ -1,5 +1,6 @@
 import path from 'node:path';
 import express from 'express';
+import { toCamelCase } from './utils/formatters.js';
 
 const app = express();
 const PORT = 3000;
@@ -36,6 +37,7 @@ const messages = [
 
 app.get('/', (request, response) => {
   response.render('index', {
+    moduleImports: { toCamelCase },
     title: 'Mini Message Board',
     messages: messages,
   });
