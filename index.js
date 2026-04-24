@@ -15,7 +15,7 @@ app.use(express.static(assetsPath));
 // Routes
 
 app.get('/', (request, response) => {
-  response.render('app', { title: 'Mini Message Board' });
+  response.render('index', { title: 'Mini Message Board' });
 });
 
 app.get('/{*splat}', (request, response) => {
