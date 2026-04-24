@@ -1,0 +1,69 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.4.13/schema.json",
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true
+  },
+  "files": {
+    "ignoreUnknown": false
+  },
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "space"
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "correctness": {
+        "useImportExtensions": "on"
+      },
+      "style": {
+        "noCommonJs": "on",
+        "noDefaultExport": "on",
+        "noRestrictedImports": {
+          "level": "on",
+          "options": {
+            "patterns": [
+              {
+                "group": "../**/*",
+                "message": "Avoid relative imports deeper than one level. Use `#root/` absolute paths instead."
+              }
+            ]
+          }
+        },
+        "useFilenamingConvention": {
+          "level": "on",
+          "options": {
+            "filenameCases": ["export", "kebab-case"]
+          }
+        },
+        "useForOf": "on",
+        "useNamingConvention": "on",
+        "useNodeAssertStrict": "on",
+        "useObjectSpread": "on",
+        "useShorthandAssign": "on"
+      }
+    }
+  },
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "single"
+    }
+  },
+  "css": {
+    "formatter": {
+      "quoteStyle": "single"
+    }
+  },
+  "assist": {
+    "enabled": true,
+    "actions": {
+      "source": {
+        "organizeImports": "on",
+        "useSortedProperties": "on"
+      }
+    }
+  }
+}
