@@ -3,25 +3,20 @@ extends layout
 include /mixins/input-field
 
 block content
-  include layouts/navbar
+  form(action='/new', method='post')
+    h2 Send your message
 
-  main
-    form(action='/new', method='post')
-      h2 Send your message
+    +input-field('Username', { type: 'text', required: true })
+    +input-field('Messages', { type: 'textarea', required: true })
 
-      +input-field('Username', { type: 'text', required: true })
-      +input-field('Messages', { type: 'textarea', required: true })
+    button(type='submit') Post
 
-      button(type='submit') Post
+  section
+    h2 Messages
 
-    section
-      h2 Messages
-
-      ul.messages
-      - for (const { username, content, date } of messages)
-        li.message
-          h3= username
-          time(datetime=date) Posted on #{ date }
-          p= content
-
-  include layouts/footer
+    ul.messages
+    - for (const { username, content, date } of messages)
+      li.message
+        h3= username
+        time(datetime=date) Posted on #{ date }
+        p= content

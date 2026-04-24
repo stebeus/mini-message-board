@@ -9,4 +9,12 @@ html(lang='en')
     link(rel='stylesheet', href='/index.css')
   body
     #root
-      block content
+      if error == null
+        include layouts/navbar
+
+        main
+          block content
+
+        include layouts/footer
+      else
+        block content
