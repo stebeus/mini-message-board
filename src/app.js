@@ -32,7 +32,7 @@ function createMessage(username, content) {
 }
 
 const messages = [
-  createMessage('John Doe', 'I will hack all users below my post...'),
+  createMessage('John Doe', 'I will hack all the users below my post...'),
   createMessage('00110101', '1110011010'),
 ];
 
