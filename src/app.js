@@ -47,3 +47,8 @@ app.get('/', (_request, response) => {
     require: { formatToCamelCase, formatToKebabCase },
   });
 });
+
+app.post('/new', ({ body: { username, message } }, response) => {
+  messages.push(createMessage(username, message));
+  response.redirect('/');
+});
