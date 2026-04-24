@@ -1,14 +1,14 @@
-import assert from 'node:assert';
+import assert from 'node:assert/strict';
 import { describe, it } from 'node:test';
 
 import { toCamelCase } from './formatters.js';
 
 describe('toCamelCase', () => {
   it('camel case strings', () => {
-    assert.strictEqual(toCamelCase('Foo BaR'), 'fooBar');
+    assert.equal(toCamelCase('Foo BaR'), 'fooBar');
   });
 
   it('removes non-alphanumeric characters', () => {
-    assert.strictEqual(toCamelCase('Hello, world!'), 'helloWorld');
+    assert.equal(toCamelCase('Hello, world!'), 'helloWorld');
   });
 });
