@@ -11,7 +11,8 @@
     "test": "node --test --watch"
   },
   "dependencies": {
-    "express": "^5.2.1"
+    "express": "^5.2.1",
+    "pug": "^3.0.4"
   },
   "packageManager": "pnpm@10.33.2"
 }
