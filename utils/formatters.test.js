@@ -11,4 +11,8 @@ describe('toCamelCase', () => {
   it('removes non-alphanumeric characters', () => {
     assert.equal(toCamelCase('Hello, world!'), 'helloWorld');
   });
+
+  it('preserves underscores', () => {
+    assert.equal(toCamelCase('JOHN_DOE'), 'john_doe');
+  });
 });
