@@ -10,5 +10,8 @@
     "start": "node --watch src/app.js",
     "test": "node --test --watch"
   },
+  "dependencies": {
+    "express": "^5.2.1"
+  },
   "packageManager": "pnpm@10.33.2"
 }
