@@ -1,4 +1,4 @@
 {
-  "plugins": ["@prettier/plugin-pug"],
+  "plugins": ["@prettier/plugin-pug", "@prettier/plugin-xml"],
   "singleQuote": true
 }
