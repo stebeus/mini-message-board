@@ -30,6 +30,11 @@ function createMessage(username, content) {
   return { ...state };
 }
 
+const messages = [
+  createMessage('John Doe', 'I will hack all users below my post...'),
+  createMessage('00110101', '1110011010'),
+];
+
 // Routes
 
 app.get('/', (_request, response) => {
