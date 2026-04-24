@@ -1,0 +1,14 @@
+{
+  "name": "mini-project-board",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "imports": {
+    "#root/*": "./*"
+  },
+  "scripts": {
+    "start": "node --watch src/app.js",
+    "test": "node --test --watch"
+  },
+  "packageManager": "pnpm@10.33.2"
+}
