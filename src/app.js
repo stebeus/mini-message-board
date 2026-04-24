@@ -1,6 +1,7 @@
 import express from 'express';
 
 import { ASSETS_PATH, VIEWS_PATH } from './constants.js';
+import { formatToCamelCase, formatToKebabCase } from './utils/formatters.js';
 
 export const app = express();
 
@@ -38,5 +39,9 @@ const messages = [
 // Routes
 
 app.get('/', (_request, response) => {
-  response.render('index');
+  response.render('index', {
+    documentTitle: 'Mini Message Board',
+    messages,
+    require: { formatToCamelCase, formatToKebabCase },
+  });
 });
