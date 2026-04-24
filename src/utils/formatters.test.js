@@ -7,4 +7,8 @@ describe('formatToCamelCase', () => {
   it('camel cases strings', () => {
     assert.equal(formatToCamelCase('Foo BaR 123'), 'fooBar123');
   });
+
+  it('removes non-alphanumeric characters', () => {
+    assert.equal(formatToCamelCase('Hello, world!'), 'helloWorld');
+  });
 });
