@@ -3,6 +3,6 @@ mixin external-link(href)
     block
 
 mixin icon(id, title)
-  svg.icon(width="24" height="24" fill="currentColor")
+  svg.icon(width="24" height="24" fill="currentColor")&attributes(attributes)
     title=title
     use(href=`/icons.svg#${id}-icon`)
