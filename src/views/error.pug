@@ -1,0 +1,7 @@
+extends layout
+
+block content
+  h1= statusCode
+  p= error.message
+  a(href='/') Go back
+  pre= error.stack
