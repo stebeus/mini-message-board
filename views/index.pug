@@ -1,11 +1,21 @@
 extends layout
 
+include mixins
+
 block content
   include navbar
 
   main
     style.
       @scope {}
+
+    form(action="/new" method="post")
+      h2 Post your message
+      +input-field(
+        'Username:', {type: 'text', placeholder:'John Doe', required: true}
+      )
+      +input-field('Message:', {type: 'textarea', required: true})
+      button(type="submit") Post
 
     section
       h2 Messages
