@@ -9,7 +9,7 @@
   "scripts": {
     "format": "prettier --write . ",
     "lint": "biome check --fix",
-    "start": "node --watch src/app.js",
+    "start": "node --watch src/server.js",
     "test": "node --test --watch"
   },
   "dependencies": {
