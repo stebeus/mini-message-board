@@ -1,3 +1,10 @@
-import { describe } from 'node:test';
+import assert from 'node:assert';
+import { describe, it } from 'node:test';
 
-describe('toCamelCase', () => {});
+import { toCamelCase } from './formatters.js';
+
+describe('toCamelCase', () => {
+  it('camel case strings', () => {
+    assert.strictEqual(toCamelCase('Foo BaR', 'fooBar'));
+  });
+});
