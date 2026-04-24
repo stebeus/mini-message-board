@@ -7,4 +7,12 @@ block content
     style.
       @scope {}
 
+    h2 Messages
+    ul.messages
+      - for (const { user, date, text } of messages)
+        li.message
+          h3=user
+          time(date) Posted on #{date}.
+          p=text
+
   include footer
