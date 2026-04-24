@@ -12,7 +12,13 @@ block content
     form(action="/new" method="post")
       h2 Post your message
       +input-field(
-        'Username:', {type: 'text', placeholder:'John Doe', required: true}
+        'Username',
+        {
+          type: 'text',
+          placeholder:'John Doe',
+          autocomplete: 'on',
+          required: true
+        }
       )
       +input-field('Message:', {type: 'textarea', required: true})
       button(type="submit") Post

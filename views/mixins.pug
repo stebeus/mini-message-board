@@ -14,4 +14,4 @@ mixin input-field(label, options)
     if options.type === 'textarea'
       textarea(name=name)&attributes(options)
     else
-      input(name=name autocomplete=(name))&attributes(options)
+      input(name=name)&attributes(options)
