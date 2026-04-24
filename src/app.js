@@ -1,17 +1,13 @@
-import path from 'node:path';
 import express from 'express';
+
+import { ASSETS_PATH, VIEWS_PATH } from './constants.js';
 
 export const app = express();
 
-const dirname = import.meta.dirname;
+app.use(express.static(ASSETS_PATH));
+app.locals.basedir = VIEWS_PATH;
 
-const assetsPath = path.join(dirname, 'public');
-const viewsPath = path.join(dirname, 'views');
-
-app.use(express.static(assetsPath));
-app.locals.basedir = viewsPath;
-
-app.set('views', viewsPath);
+app.set('views', VIEWS_PATH);
 app.set('view engine', 'pug');
 
 app.get('/', (_request, response) => {
