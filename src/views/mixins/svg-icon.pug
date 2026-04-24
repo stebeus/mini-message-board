@@ -1,0 +1,6 @@
+mixin svg-icon(title)
+  - const id = require.formatToKebabCase(title);
+
+  svg.svg-icon(width=24, height=24, fill='currentColor')&attributes(attributes)
+    title= title
+    use(href=`/icons.svg#${id}-icon`)
