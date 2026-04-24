@@ -7,6 +7,8 @@ export const app = express();
 
 // Setup
 
+app.use(express.urlencoded({ extended: true }));
+
 app.use(express.static(ASSETS_PATH));
 app.locals.basedir = VIEWS_PATH;
 
