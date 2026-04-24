@@ -1,8 +1,17 @@
 extends layout
 
+include /mixins/input-field
+
 block content
   include layouts/navbar
 
   main
+    form(action='/new', method='post')
+      h2 Send your message
+
+      +input-field('Username', { type: 'text', required: true })
+      +input-field('Messages', { type: 'textarea', required: true })
+
+      button(type='submit') Post
 
   include layouts/footer
