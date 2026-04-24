@@ -22,6 +22,7 @@
       "style": {
         "noCommonJs": "on",
         "noDefaultExport": "on",
+        "noMagicNumbers": "on",
         "noRestrictedImports": {
           "level": "on",
           "options": {
