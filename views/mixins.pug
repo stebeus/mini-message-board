@@ -6,3 +6,12 @@ mixin icon(id, title)
   svg.icon(width='24' height='24' fill='currentColor')&attributes(attributes)
     title=title
     use(href=`/icons.svg#${id}-icon`)
+
+mixin input-field(label, options)
+  - const name = label.trim().replace(' ', '-').replace(':', '').toLowerCase()
+
+  label.input-field&attributes(attributes) #{label}!{' '}
+    if options.type === 'textarea'
+      textarea(name=name)&attributes(options)
+    else
+      input(name=name autocomplete=(name))&attributes(options)
