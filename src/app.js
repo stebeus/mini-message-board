@@ -1,54 +1,21 @@
+import path from 'node:path';
 import express from 'express';
 
-import { ASSETS_PATH, VIEWS_PATH } from './constants.js';
-import { formatToCamelCase, formatToKebabCase } from './utils/formatters.js';
+import { error } from './routes/error.js';
+import { index } from './routes/index.js';
 
 export const app = express();
 
-// Setup
+const dirname = import.meta.dirname;
+const viewsPath = path.join(dirname, 'views');
 
-app.use(express.urlencoded({ extended: true }));
+app.locals.basedir = viewsPath;
 
-app.use(express.static(ASSETS_PATH));
-app.locals.basedir = VIEWS_PATH;
-
-app.set('views', VIEWS_PATH);
+app.set('views', viewsPath);
 app.set('view engine', 'pug');
 
-// Model
+app.use(express.static('public'));
+app.use(express.urlencoded({ extended: true }));
 
-function createMessage(username, content) {
-  const formattedDateOptions = {
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric',
-  };
-
-  const state = {
-    username: String(username),
-    content: String(content),
-    date: new Date().toLocaleDateString('en-US', formattedDateOptions),
-  };
-
-  return { ...state };
-}
-
-const messages = [
-  createMessage('John Doe', 'I will hack all the users below my post...'),
-  createMessage('00110101', '1110011010'),
-];
-
-// Routes
-
-app.get('/', (_request, response) => {
-  response.render('index', {
-    documentTitle: 'Mini Message Board',
-    messages,
-    require: { formatToCamelCase, formatToKebabCase },
-  });
-});
-
-app.post('/new', ({ body: { username, message } }, response) => {
-  messages.push(createMessage(username, message));
-  response.redirect('/');
-});
+app.use('/', index);
+app.use(error);
