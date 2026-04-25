@@ -1,9 +1,7 @@
 extends layout
 
 block content
-  h1= statusCode
+  h1= status
   p= error.message
   a(href='/') Go back
-
-  if error.stack
-    pre= error.stack
+  pre= error.stack
