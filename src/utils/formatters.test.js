@@ -26,12 +26,10 @@ describe('formatToCamelCase', () => {
 
 describe('formatDate', () => {
   it('rejects non-Date object inputs', () => {
-    const string = '1/1/2000';
-
-    assert.throws(
-      () => formatDate(string),
-      'Expected 1/1/2000 to be an instance of Date, received string',
-    );
+    assert.throws(formatDate, {
+      message:
+        'Expected undefined to be an instance of Date, received undefined',
+    });
   });
 
   it('formats dates numerically in the en-US locale by default', () => {
