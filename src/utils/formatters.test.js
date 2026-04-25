@@ -44,6 +44,21 @@ describe('formatDate', () => {
     // Assert
     assert.equal(formattedDate, '2/1/2000, 12:00:00 AM');
   });
+
+  it('formats dates based on options', () => {
+    // Arrange
+    const date = new Date(2000, 0, 1);
+
+    // Act
+    const formattedDate = formatDate(date, 'en-GB', {
+      year: 'numeric',
+      month: 'long',
+      day: '2-digit',
+    });
+
+    // Assert
+    assert.equal(formattedDate, '01 January 2000');
+  });
 });
 
 describe('formatToKebabCase', () => {
