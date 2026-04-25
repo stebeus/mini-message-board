@@ -34,15 +34,15 @@ describe('formatDate', () => {
     );
   });
 
-  it('formats dates based on locale and options', () => {
+  it('formats dates numerically in the en-US locale by default', () => {
     // Arrange
-    const date = new Date(2000, 0, 1);
+    const date = new Date(2000, 1, 1);
 
     // Act
-    const formattedDate = formatDate(date, 'en-US', 'numeric');
+    const formattedDate = formatDate(date);
 
     // Assert
-    assert.equal(formattedDate, '1/1/2000, 12:00:00 AM');
+    assert.equal(formattedDate, '2/1/2000, 12:00:00 AM');
   });
 });
 
