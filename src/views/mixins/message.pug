@@ -1,0 +1,16 @@
+mixin message(username, content, date, id)
+  -
+    const isoDate = date.toISOString()
+
+    const formattedDate = date.toLocaleString('en-US', {
+      year: 'numeric',
+      month: 'numeric',
+      day: 'numeric',
+      hour: 'numeric',
+      minute: 'numeric'
+    })
+
+  li.message
+    h3.username= username
+    time(datetime=isoDate)= formattedDate
+    p.content= content
