@@ -1,10 +1,5 @@
-mixin input-field(label, options)
-  - const name = require.formatToCamelCase(label);
-
-  label.input-field&attributes(attributes)
-    | #{ label }:
+mixin input-field(label)
+  label.input-field
+    span.label #{ label }:
     |
-    #{ options.type === 'textarea' ? 'textarea' : 'input' }(
-      name=name,
-      autocomplete='on'
-    )&attributes(options)
+    block
