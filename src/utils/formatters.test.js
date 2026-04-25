@@ -25,6 +25,15 @@ describe('formatToCamelCase', () => {
 });
 
 describe('formatDate', () => {
+  it('rejects non-Date object inputs', () => {
+    const string = '1/1/2000';
+
+    assert.throws(
+      () => formatDate(string),
+      'Expected 1/1/2000 to be an instance of Date, received string',
+    );
+  });
+
   it('formats dates based on locale and options', () => {
     // Arrange
     const date = new Date(2000, 0, 1);
