@@ -4,16 +4,19 @@ import { describe, it } from 'node:test';
 import { formatToCamelCase, formatToKebabCase } from './formatters.js';
 
 describe('formatToCamelCase', () => {
-  it('camel cases strings', () => {
-    assert.equal(formatToCamelCase('Foo BaR 123'), 'fooBar123');
+  it('parses inputs to strings', () => {
+    const string = formatToCamelCase(null);
+    assert.equal(string, 'null');
   });
 
   it('removes non-alphanumeric characters', () => {
-    assert.equal(formatToCamelCase('Hello, world!'), 'helloWorld');
+    const string = formatToCamelCase('Hello, world!');
+    assert.equal(string, 'helloWorld');
   });
 
-  it('preserves underscores', () => {
-    assert.equal(formatToCamelCase('John_Doe'), 'john_doe');
+  it('camel cases strings', () => {
+    const string = formatToCamelCase('John Do_e-123 ');
+    assert.equal(string, 'johnDoe123');
   });
 });
 
