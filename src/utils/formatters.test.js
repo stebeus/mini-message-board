@@ -20,6 +20,8 @@ describe('formatToCamelCase', () => {
   });
 });
 
+describe('formatDate', () => {});
+
 describe('formatToKebabCase', () => {
   it('parses inputs to strings', () => {
     const string = formatToKebabCase(null);
