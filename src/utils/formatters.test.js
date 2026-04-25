@@ -1,7 +1,11 @@
 import assert from 'node:assert/strict';
 import { describe, it } from 'node:test';
 
-import { formatToCamelCase, formatToKebabCase } from './formatters.js';
+import {
+  formatDate,
+  formatToCamelCase,
+  formatToKebabCase,
+} from './formatters.js';
 
 describe('formatToCamelCase', () => {
   it('parses inputs to strings', () => {
@@ -20,7 +24,18 @@ describe('formatToCamelCase', () => {
   });
 });
 
-describe('formatDate', () => {});
+describe('formatDate', () => {
+  it('formats dates based on locale and options', () => {
+    // Arrange
+    const date = new Date(2000, 0, 1);
+
+    // Act
+    const formattedDate = formatDate(date, 'en-US', 'numeric');
+
+    // Assert
+    assert.equal(formattedDate, '1/1/2000, 12:00:00 AM');
+  });
+});
 
 describe('formatToKebabCase', () => {
   it('parses inputs to strings', () => {
