@@ -12,12 +12,11 @@ export function formatToCamelCase(string) {
 }
 
 export function formatToKebabCase(string) {
-  const lowerCased = string.toLowerCase();
+  const parsedString = String(string);
 
-  const spacesAndUnderscores = /[\s_]+/g;
-  const nonAlphanumeric = /[^0-9a-zA-Z-]/g;
-
-  return lowerCased
-    .replace(spacesAndUnderscores, '-')
-    .replace(nonAlphanumeric, '');
+  return parsedString
+    .toLowerCase()
+    .trim()
+    .replaceAll(' ', '-')
+    .replace(/[^0-9A-Za-z-]/g, '');
 }
