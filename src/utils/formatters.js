@@ -1,10 +1,14 @@
 export function formatToCamelCase(string) {
-  const lowerCased = string.toLowerCase();
+  const parsedString = String(string);
 
   const capitalizeRemainder = (string, character) =>
     string + (character.charAt(0).toUpperCase() + character.slice(1));
 
-  return lowerCased.split(' ').reduce(capitalizeRemainder).replace(/\W/g, '');
+  return parsedString
+    .toLowerCase()
+    .split(' ')
+    .reduce(capitalizeRemainder)
+    .replace(/[^0-9A-Za-z]/g, '');
 }
 
 export function formatToKebabCase(string) {
