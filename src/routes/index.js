@@ -5,12 +5,7 @@ import { formatToKebabCase } from '#root/utils/formatters.js';
 const router = Router();
 
 const createMessage = (username, content) =>
-  Object.freeze({
-    username,
-    content,
-    date: new Date(),
-    id: crypto.randomUUID(),
-  });
+  Object.freeze({ username, content, date: new Date() });
 
 const messages = [
   createMessage('John Doe', "I'm gonna hack all users below me..."),
