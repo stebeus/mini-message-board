@@ -1,0 +1,22 @@
+include /mixins/input-field
+
+fieldset
+  legend Draft
+
+  form(action='/new-message', method='post')
+    +input-field('Username (3 to 20 characters)')
+      input(
+        type='text',
+        name='username',
+        minlength='3',
+        maxlength='20',
+        pattern='([0-9A-Za-z_]{1,20})|John Doe',
+        placeholder='john_doe123',
+        required,
+        autocomplete='on'
+      )
+
+    +input-field('Message (up to 500 characters)')
+      textarea(name='message', minlength='1', maxlength='1000', required)
+
+    button(type='submit') Send
