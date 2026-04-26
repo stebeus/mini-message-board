@@ -12,9 +12,10 @@ router.use((error, request, response, next) => {
   if (response.headersSent) return next(error);
 
   const status = error.status ?? 500;
+  const pageTitle = `${status} ${error.message}`;
 
   console.log(error.stack);
-  response.status(status).render('error', { pageTitle: status, status, error });
+  response.status(status).render('error', { pageTitle, status, error });
 });
 
 export { router as error };
