@@ -1,0 +1,251 @@
+/* CSS DIRECTORY
+  1. DOCUMENT
+  2. FORMS
+  3. INTERACTIVE
+  4. MEDIA
+  5. TABULAR DATA
+  6. TEXT-LEVEL SEMANTICS
+*/
+
+/* || DOCUMENT */
+
+/* Use a better box model. */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*
+  1. Use accessible and smarter line heights.
+  ? https://kittygiraudel.com/2020/05/18/using-calc-to-figure-out-optimal-line-height/
+
+  2. Remove all default margins except for dialogs.
+*/
+
+* {
+  line-height: calc(1em + 0.5rem); /* 1 */
+
+  &:not(dialog) {
+    margin: 0; /* 2 */
+  }
+}
+
+/*
+  1. Improve default font consistency in all browsers.
+  2. Prevent font size adjustments after orientation changes in iOS.
+  3. Use a more readable tab size (opinionated).
+  4. Support automatic light and dark color schemes.
+*/
+
+html {
+  font-family: system-ui, sans-serif; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+  tab-size: 4; /* 3 */
+  color-scheme: light dark; /* 4 */
+}
+
+/*
+  Fix z-index issues with a new stacking context.
+  ? https://www.joshwcomeau.com/css/stacking-contexts/
+*/
+
+#root {
+  isolation: isolate;
+}
+
+/* || FORMS */
+
+/* Inherit font styles. */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font: inherit;
+}
+
+/* Correct the inability to style clickable types in iOS and Safari. */
+
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+  -webkit-appearance: button;
+}
+
+/* Remove the padding, so that developers are not caught out when they zero out "fieldset" elements in all browsers. */
+
+legend {
+  padding: 0;
+}
+
+/* Correct vertical alignment in Chrome and Firefox. */
+
+progress {
+  vertical-align: baseline;
+}
+
+/*
+  1. Correct the inability to style clickable types in iOS and Safari.
+  2. Change font properties to "inherit" in Safari.
+*/
+
+::-webkit-file-upload-button {
+  font: inherit; /* 1 */
+  -webkit-appearance: button; /* 2 */
+}
+
+/* Correct the cursor style of increment and decrement buttons in Safari. */
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/* Remove the inner padding in Chrome and Safari on macOS. */
+
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/*
+  1. Correct the odd appearance in Chrome and Safari.
+  2. Correct the outline style in Safari.
+*/
+
+[type='search'] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/* || INTERACTIVE */
+
+/*
+  Give interactive elements a pointer cursor.
+  ? https://css-tricks.com/snippets/css/give-clickable-elements-a-pointer-cursor/
+*/
+
+button,
+input:is([type='checkbox'], [type='radio']),
+label,
+select,
+.pointer {
+  cursor: pointer;
+}
+
+/* Correct display in Chrome and Safari. */
+
+summary {
+  display: list-item;
+}
+
+/* || MEDIA */
+
+/*
+  1. Treat media elements as blocks.
+  2. Make media elements responsive.
+*/
+
+canvas,
+img,
+picture,
+svg,
+video {
+  display: block; /* 1 */
+  max-width: 100%; /* 2 */
+  height: auto; /* 2 */
+}
+
+/* Set apart image alternative text from normal content. */
+
+img {
+  font-style: italic;
+}
+
+/* || TABULAR DATA */
+
+/*
+  Correct table border color inheritance in Chrome and Safari.
+  ? https://issues.chromium.org/issues/40615503
+  ? https://bugs.webkit.org/show_bug.cgi?id=195016
+*/
+
+table {
+  border-color: currentcolor;
+}
+
+/* || TEXT-LEVEL SEMANTICS */
+
+/* Correct font weight in Chrome and Safari. */
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/*
+  1. Improve default font consistency in all browsers.
+  2. Correct the odd "em" font sizing in all browsers.
+*/
+
+code,
+kbd,
+samp,
+pre {
+  font-family: ui-monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/* Avoid text overflows */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  overflow-wrap: break-word;
+}
+
+/* Improve line wrapping. */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+/* Correct font size in all browsers. */
+
+small {
+  font-size: 80%;
+}
+
+/* Prevent "sub" and "sup" elements from affecting the line height in all browsers. */
+
+sub,
+sup {
+  position: relative;
+  font-size: 75%;
+  line-height: 0;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
