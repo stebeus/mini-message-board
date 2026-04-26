@@ -3,7 +3,7 @@ import { Router } from 'express';
 const router = Router();
 
 router.use((request, response, next) => {
-  const notFoundError = new Error('Not found');
+  const notFoundError = new Error('Not Found');
   notFoundError.status = 404;
   next(notFoundError);
 });
