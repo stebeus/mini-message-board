@@ -1,0 +1,102 @@
+:root {
+  /* Borders */
+
+  --border: 1px solid var(--color-border);
+
+  /* Colors */
+
+  --color-base: oklch(1 0 0);
+  --color-content: oklch(0.15 0 0);
+  --color-contentMuted: oklch(from var(--color-content) calc(l + 0.25) c h);
+  --color-border: oklch(from var(--color-content) l c h / 0.2);
+
+  /* Sizes */
+
+  --size-2xs: 0.25rem;
+  --size-xs: 0.5rem;
+  --size-sm: 0.75rem;
+  --size-md: 1rem;
+  --size-lg: 1.25rem;
+  --size-xl: 1.5rem;
+  --size-2xl: 1.75rem;
+  --size-3xl: 2rem;
+
+  /* Typography */
+
+  --ff: system-ui, sans-serif;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-bold: 700;
+
+  --font-small: var(--fw-regular) 0.875rem var(--ff);
+  --font-body: var(--fw-regular) var(--size-md) var(--ff);
+  --font-subheading: var(--fw-medium) var(--size-md) var(--ff);
+  --font-h2: var(--fw-bold) 1.125rem var(--ff);
+  --font-h1: var(--fw-bold) var(--size-lg) var(--ff);
+
+  /* Theme */
+
+  @media (prefers-color-scheme: dark) {
+    --color-base: oklch(0.2 0 0);
+    --color-content: oklch(0.95 0 0);
+    --color-contentMuted: oklch(from var(--color-content) calc(l - 0.25) c h);
+  }
+}
+
+.button {
+  display: flex;
+  gap: var(--size-xs);
+  max-width: max-content;
+  padding: var(--size-xs) var(--size-lg);
+  font: var(--font-subheading);
+  color: var(--color-content);
+  background-color: var(--color-base);
+  border: var(--border);
+  border-radius: var(--size-xs);
+}
+
+.pill {
+  border-radius: calc(inherit + 1em);
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+}
+
+#root {
+  min-block-size: 100svb;
+  padding: 1rem;
+  font: var(--font-body);
+  color: var(--color-contentMuted);
+  background-color: var(--color-base);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-content);
+}
+
+h1 {
+  font: var(--font-h1);
+}
+
+h2 {
+  font: var(--font-h2);
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font: var(--font-subheading);
+}
+
+time {
+  font: var(--font-small);
+}

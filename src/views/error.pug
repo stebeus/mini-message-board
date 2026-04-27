@@ -3,5 +3,11 @@ extends layout
 block content
   h1= status
   p= error.message
-  a(href='/') Go back
+  a.button(href='/').
+    Go back
+
+  include mixins/svg-icon
+
+  button.button.pill Go back in space and time
+
   pre= error.stack

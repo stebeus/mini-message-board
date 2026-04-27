@@ -4,17 +4,14 @@ include mixins/input-field
 include mixins/message
 
 block content
-  .app
-    include components/navbar
+  include components/navbar
 
-    main
-      include components/form
+  main
+    include components/form
 
-      section
-        h2 Messages
+    section
+      h2 Messages
 
-        ul.messages
-          - for (const { username, content, date } of messages)
-            +message(username, content, date)
-
-    include components/footer
+      ul.messages
+        - for (const { username, content, date } of messages)
+          +message(username, content, date)
