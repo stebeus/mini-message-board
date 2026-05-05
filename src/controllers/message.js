@@ -1,3 +1,3 @@
 export const getMessages = (req, res) => {
-	res.render('index', { messages });
+	res.render('index', { title: null, messages });
 };
