@@ -7,7 +7,7 @@
 		"#root/*": "./src/*"
 	},
 	"scripts": {
-		"start": "node --watch src/app",
+		"start": "node --watch src/server.js",
 		"test": "node --test --watch"
 	},
 	"dependencies": {
