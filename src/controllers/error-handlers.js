@@ -18,5 +18,5 @@ export const handleError = (error, req, res, next) => {
 	const title = `${statusCode} ${error.message}`;
 
 	console.log(error.stack);
-	res.status(statusCode).render('error', { title, error });
+	res.status(statusCode).render('error', { title, statusCode, error });
 };
