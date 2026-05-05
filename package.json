@@ -10,6 +10,9 @@
 		"start": "node --watch src/app",
 		"test": "node --test --watch"
 	},
+	"dependencies": {
+		"express": "^5.2.1"
+	},
 	"devEngines": {
 		"packageManager": {
 			"name": "pnpm",
