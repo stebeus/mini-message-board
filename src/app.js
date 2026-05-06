@@ -2,7 +2,7 @@ import { join } from 'node:path';
 
 import express from 'express';
 
-import { forwardNotFoundError, handleError } from './controllers/error-handlers.js';
+import { forwardNotFoundError, handleError } from './controllers/error.js';
 import { index } from './routes/index.js';
 import { newMessage } from './routes/new-message.js';
 
