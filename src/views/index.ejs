@@ -9,7 +9,7 @@
     <ul class="messages">
       <% messages.forEach(({username, message, timestamp}) => { %>
       <li class="message">
-        <h3><%= username %> </h3>
+        <h2><%= username %> </h2>
         <time datetime="<%= timestamp %>"><%= timestamp %></time>
         <p><%= message %> </p>
       </li>
