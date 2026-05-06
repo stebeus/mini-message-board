@@ -6,4 +6,4 @@ export const getAllMessages = async () => {
 };
 
 export const insertMessage = async (user, message) =>
-	await pool.query('INSERT INTO messages (user, message) VALUES ($1)', [user, message]);
+	await pool.query('INSERT INTO messages (user, message) VALUES ($1, $2)', [user, message]);
