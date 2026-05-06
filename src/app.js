@@ -18,7 +18,7 @@ app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 
 app.use('/', index);
-app.use('/new-message', newMessage);
+app.use(newMessage);
 
 app.use(forwardNotFoundError);
 app.use(handleError);
