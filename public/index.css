@@ -134,6 +134,7 @@ pre {
 		font-size: 0.875rem;
 	}
 
+	max-width: 80ch;
 	gap: var(--size-xxs)
 }
 
