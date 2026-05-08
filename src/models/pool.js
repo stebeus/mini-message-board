@@ -1,5 +1,5 @@
 import { Pool } from 'pg';
 
-import { DATABASE } from '#root/constants.js';
+import { DATABASE_URL } from '#root/constants.js';
 
-export const pool = new Pool({ connectionString: DATABASE });
+export const pool = new Pool({ connectionString: DATABASE_URL });

@@ -2,7 +2,7 @@
 
 import { Client } from 'pg';
 
-import { DATABASE } from '#root/constants.js';
+import { DATABASE_URL } from '#root/constants.js';
 
 const SQL = `
 CREATE TABLE IF NOT EXISTS messages (
@@ -19,7 +19,7 @@ VALUES ('John Doe', 'I am going to hack all users below me...');
 const populateModel = async () => {
 	console.log('Seeding...');
 
-	const client = new Client({ connectionString: DATABASE });
+	const client = new Client({ connectionString: DATABASE_URL });
 
 	await client.connect();
 	await client.query(SQL);
