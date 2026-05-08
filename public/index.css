@@ -97,6 +97,8 @@
 	font: var(--font-p);
 	color: var(--color-contentMuted);
 	background-color: var(--color-base);
+	max-height: 100svh;
+	padding: var(--size-xs) 0 var(--size-m)
 }
 
 h1,
@@ -121,6 +123,7 @@ pre {
 
 .messages {
 	gap: var(--size-l);
+	overflow-y: auto;
 }
 
 .message {
@@ -168,7 +171,6 @@ form {
 footer {
 	display: flex;
 	gap: var(--size-s);
-	padding: var(--size-xs);
 
 	a:hover {
 		color: var(--color-content);
