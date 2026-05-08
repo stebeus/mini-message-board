@@ -1,6 +1,6 @@
 {
 	"name": "mini-message-board",
-	"version": "2.1.0",
+	"version": "2.2.0",
 	"private": true,
 	"type": "module",
 	"imports": {
@@ -8,8 +8,7 @@
 	},
 	"scripts": {
 		"lint": "biome check --fix",
-		"populatedb": "node src/models/populate-model.js",
-		"start": "node --watch src/server.js",
+		"start": "node src/models/populate-model.js && node --watch src/server.js",
 		"test": "node --test --watch"
 	},
 	"dependencies": {
