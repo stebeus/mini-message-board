@@ -1,9 +1,9 @@
 import { loadEnvFile } from 'node:process';
 
-const { DATABASE_URL, PORT = 3000, NODE_ENV } = process.env;
-
-if (NODE_ENV !== 'production') {
+try {
   loadEnvFile()
+} catch (error) {
+  console.error(error)
 }
 
-export {DATABASE_URL, PORT, NODE_ENV  }
+export const { DATABASE_URL, PORT = 3000 } = process.env;
