@@ -4,19 +4,19 @@
 <%- include('partials/head', { title }) %>
 
 <body>
-  <div id="root">
-    <a href="/">Go back</a>
-    <form action="/new-message" method="post">
-      <h1>Message draft</h1>
-      <label class="field">
-        <span class="label">Username (from 3 to 10 characters): </span>
+  <div id="root" class="center-xy stack">
+    <h1>Message Draft</h1>
+    <a href="/" class="button interactive">Go back</a>
+    <form action="/new-message" method="post" class="stack card center-xy">
+      <label class="field stack">
+        <span class="label">Username <span class="input-info">(from 3 to 10 characters):</span> </span>
         <input type="text" name="username" minlength="3" maxlength="10" placeholder="john_doe123" pattern="([0-9A-Za-z_]{1,20})|John Doe" required autocomplete="on">
       </label>
-      <label class="field">
-        <span class="label">Message (up to 1000 characters): </span>
+      <label class="field stack">
+        <span class="label">Message <span class="input-info">(up to 1000 characters):</span> </span>
         <textarea name="message" minlength="1" maxlength="1000" required></textarea>
       </label>
-      <button type="submit">Post</button>
+      <button type="submit" class="button interactive">Post</button>
     </form>
   </div>
 </body>

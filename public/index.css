@@ -1,4 +1,22 @@
+/* CSS DIRECTORY
+	1. TOKENS
+	2. UTILITIES
+	3. BASE
+	4. COMPONENTS
+*/
+
+/* || TOKENS */
+
 :root {
+	/* Borders */
+	--border: 1px solid var(--color-border);
+
+	/* Colors */
+	--color-base: oklch(0.175 0 0);
+	--color-border: oklch(from var(--color-base) calc(l + 0.125) c h);
+	--color-content: oklch(0.95 0 0);
+	--color-contentMuted: oklch(from var(--color-content) calc(l - 0.25) c h);
+
 	/* Sizing */
 	--size-xxs: 0.25rem;
 	--size-xs: 0.5rem;
@@ -7,4 +25,159 @@
 	--size-l: 1.25rem;
 	--size-xl: 1.5rem;
 	--size-xxl: 2rem;
+
+	/* Typography */
+	--ff-sans: system-ui, sans-serif;
+
+	--font-p: 400 var(--size-m) var(--ff-sans);
+	--font-h2: 500 1.125rem var(--ff-sans);
+	--font-h1: 700 var(--size-xxl) var(--ff-sans);
+
+	/* Light theme */
+	@media (prefers-color-scheme: light) {
+		--color-base: oklch(1 0 0);
+		--color-border: oklch(from var(--color-base) calc(l - 0.125) c h);
+		--color-content: oklch(0.175 0 0);
+		--color-contentMuted: oklch(from var(--color-content) calc(l + 0.25) c h);
+	}
+}
+
+/* || UTILITIES */
+
+.button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: var(--border);
+	padding: var(--size-xs) var(--size-xl);
+	max-width: fit-content;
+	border-radius: var(--size-xs);
+	font-weight: 500;
+}
+
+.card {
+	padding: var(--size-l);
+	border: var(--border);
+	border-radius: var(--size-xs);
+}
+
+.center-xy {
+	place-content: center;
+	place-items: center;
+}
+
+.interactive {
+	--color-hover: white;
+
+	cursor: pointer;
+
+	@media (prefers-color-scheme: light) {
+		--color-hover: black;
+	}
+
+	&:hover {
+		background-color: color-mix(in oklch, var(--color-base), var(--color-hover) 5%);
+	}
+}
+
+.stack {
+	display: flex;
+	flex-direction: column;
+}
+
+.vr {
+	min-height: 1em;
+	border-left: var(--border);
+}
+
+/* || BASE */
+
+#root {
+	gap: var(--size-m);
+	font: var(--font-p);
+	color: var(--color-contentMuted);
+	background-color: var(--color-base);
+}
+
+h1,
+h2 {
+	color: var(--color-content);
+}
+
+h1 {
+	font: var(--font-h1);
+}
+
+h2 {
+	font: var(--font-h2);
+}
+
+pre {
+	font-family: monospace;
+}
+
+
+/* || COMPONENTS */
+
+.messages {
+	gap: var(--size-l);
+}
+
+.message {
+	header {
+		display: flex;
+		align-items: center;
+		gap: var(--size-xs)
+	}
+
+	time {
+		font-size: 0.875rem;
+	}
+
+	gap: var(--size-xxs)
+}
+
+form {
+	gap: var(--size-l)
+}
+
+.field {
+	.label {
+		display: block;
+		font: var(--font-h2);
+		color: var(--color-content);
+	}
+
+	gap: var(--size-xxs);
+	width: 100%;
+
+	input, textarea {
+		border: var(--border);
+		padding: var(--size-xs) var(--size-s);
+		border-radius: var(--size-xs);
+	}
+
+	.input-info {
+		font: var(--font-p);
+		font-size: 0.875rem;
+		color: var(--color-contentMuted);
+	}
+}
+
+footer {
+	display: flex;
+	gap: var(--size-s);
+	padding: var(--size-xs);
+
+	a:hover {
+		color: var(--color-content);
+	}
+
+	a:has(.svg-icon) {
+		transition: transform 750ms;
+
+		&:hover {
+			transform: rotate(1turn);
+		}
+	}
 }

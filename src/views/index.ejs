@@ -4,18 +4,25 @@
 <%- include('partials/head', { title }) %>
 
 <body>
-  <div id="root">
+  <div id="root" class="center-xy stack">
     <h1>Mini Message Board</h1>
-    <a href="/new-message">Post new message</a>
-    <ul class="messages">
+    <a href="/new-message" class="button interactive">Post new message</a>
+    <ul class="messages card stack">
       <% messages.forEach(({username, message, timestamp}) => { %>
-      <li class="message">
-        <h2><%= username %> </h2>
-        <time datetime="<%= timestamp %>"><%= timestamp %></time>
-        <p><%= message %> </p>
+      <li >
+        <article class="message card stack">
+          <header>
+            <h2><%= username %></h2>
+             <time datetime="<%= timestamp %>">
+              <%= timestamp %>
+            </time>
+          </header>
+           <p><%= message %> </p>
+        </article>
       </li>
       <% }); %>
     </ul>
+    <%- include('partials/footer') %>
   </div>
 </body>
 

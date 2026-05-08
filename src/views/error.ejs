@@ -4,11 +4,11 @@
 <%- include('partials/head', { title }) %>
 
 <body>
-  <div id="root">
+  <div id="root" class="stack center-xy">
     <h1><%= statusCode %></h1>
     <p><%= error.message %></p>
-    <a href="/">Go back</a>
-    <pre><%= error.stack %></pre>
+    <a href="/" class="button interactive">Go back</a>
+    <pre class="card"><%= error.stack %></pre>
   </div>
 </body>
 
